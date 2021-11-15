@@ -8,13 +8,10 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import utilities.ConfigurationReader;
-
-import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Tests {
@@ -77,9 +74,37 @@ public class Tests {
 
         assertEquals("129049fe-5a1f-4590-ad2a-97a61f83b0fc", response.jsonPath().get("content.data[" + lastData + "].name"));
 
-        ValidatableResponse vr = response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("amplienceSchema.json"));
+        ValidatableResponse vr = response.then().body(matchesJsonSchemaInClasspath("amplienceSchema.json"));
 
         assertEquals(true,vr);
+    }
+
+    @Test
+    public void lastAsset() {
+
+        String access_token = "Bearer " + accessToken;
+
+        Response response = given()
+                .baseUri(ConfigurationReader.get("base_path"))
+                .header("Authorization", access_token)
+                .header("content-type", "application/x-www-form-urlencoded")
+                .when().get("v1.5.0/assets/" + id + "/versions");
+
+        System.out.println(response.statusCode());
+
+        System.out.println(access_token);
+
+        response.prettyPrint();
+
+        JsonPath jsonPath = response.jsonPath();
+
+        String userName = jsonPath.getString("content.data[0].user");
+
+        System.out.println("userName = " + userName);
+
+        assertEquals("Amplience system", response.jsonPath().get("content.data[0].user"));
+
+
     }
 
 
