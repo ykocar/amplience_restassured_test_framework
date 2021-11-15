@@ -44,4 +44,43 @@ public class Tests {
 
     }
 
+    @Test
+    public void getID() {
+
+        String access_token = "Bearer " + accessToken;
+
+        Response response = given()
+                .baseUri(ConfigurationReader.get("base_path"))
+                .header("Authorization", access_token)
+                .header("content-type", "application/x-www-form-urlencoded")
+                .when().get("/v1.5.0/assets");
+
+        System.out.println(response.statusCode());
+
+        System.out.println(access_token);
+
+        response.prettyPrint();
+
+        System.out.println(accessToken);
+
+        JsonPath jsonPath = response.jsonPath();
+
+        int lastData = response.jsonPath().getList("content.data").size() - 1;
+
+        System.out.println("lastData = " + lastData);
+
+        id = response.jsonPath().get("content.data[" + lastData + "].id");
+
+        System.out.println("id = " + id);
+
+        assertEquals(response.statusCode(), 200);
+
+        assertEquals("129049fe-5a1f-4590-ad2a-97a61f83b0fc", response.jsonPath().get("content.data[" + lastData + "].name"));
+
+        ValidatableResponse vr = response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("amplienceSchema.json"));
+
+        assertEquals(true,vr);
+    }
+
+
 }
