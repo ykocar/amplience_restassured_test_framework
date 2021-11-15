@@ -10,9 +10,9 @@ I also use REST Assured library to test RESTful APIs.
 
 I have added client credentials (client_id and client_secret) in the .env file. Those credentials are not committed but taken from (.env file) at run time. I added this (.env file) into (.gitignore file). So, please create your own env file with those Credentials:
 
--GRANT_TYPE=<YOUR_GRANT_TYPE>
--CLIENT_ID=<YOUR_CLIENT_ID>
--CLIENT_SECRET=<YOUR_CLIENT_SECRET>
+- GRANT_TYPE=<YOUR_GRANT_TYPE>
+- CLIENT_ID=<YOUR_CLIENT_ID>
+- CLIENT_SECRET=<YOUR_CLIENT_SECRET>
 
 I got access_token in oauth2 client by using Client Credentials grant type.
 
