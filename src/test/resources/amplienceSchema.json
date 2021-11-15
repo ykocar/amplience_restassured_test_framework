@@ -1,0 +1,209 @@
+{
+  "$schema": "http://json-schema.org/2021-11/schema",
+  "$id": "http://example.com/ampliance.schema.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "srcName": "1a50e277-1c0b-4268-82c7-6f956466b3ea.jpg",
+      "revisionNumber": 5,
+      "bucketID": "dd9ae64e-389f-4c4c-9d42-bf1460aa74c4",
+      "label": "1a50e277-1c0b-4268-82c7-6f956466b3ea.jpg",
+      "mimeType": "image/jpeg",
+      "type": "image",
+      "thumbFile": "1e910d1f-9a92-42ef-a02f-0bcdd5414398",
+      "folderID": "88f38092-1bbe-4726-8ce1-14613b5b311b",
+      "file": "1e910d1f-9a92-42ef-a02f-0bcdd5414398",
+      "createdDate": 1576243491266,
+      "name": "1a50e277-1c0b-4268-82c7-6f956466b3ea",
+      "subType": null,
+      "id": "b87a017e-498a-4802-b34e-952ea9962206",
+      "thumbURL": "https://thumbs.amplience-qa.net/r/1e910d1f-9a92-42ef-a02f-0bcdd5414398",
+      "publishStatus": "PUBLISHED",
+      "status": "active",
+      "timestamp": 1576254580364
+    }
+  ],
+  "required": [
+    "srcName",
+    "revisionNumber",
+    "bucketID",
+    "label",
+    "mimeType",
+    "type",
+    "thumbFile",
+    "folderID",
+    "file",
+    "createdDate",
+    "name",
+    "subType",
+    "id",
+    "thumbURL",
+    "publishStatus",
+    "status",
+    "timestamp"
+  ],
+  "content": {
+    "data": [
+      {
+        "srcName": {
+          "type": "string",
+          "title": "The src name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "bk_139046_a.jpg"
+          ]
+        },
+        "revisionNumber": {
+          "type": "integer",
+          "title": "The revision name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": 0,
+          "examples": [
+            5
+          ]
+        },
+        "bucketID": {
+          "type": "string",
+          "title": "The bucket ID schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "dd9ae64e-389f-4c4c-9d42-bf1460aa74c4"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "title": "The label schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": " ",
+          "examples": [
+            "1a50e277-1c0b-4268-82c7-6f956466b3ea.jpg"
+          ]
+        },
+        "mimeType": {
+          "type": "string",
+          "title": "The MIME schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": " ",
+          "examples": [
+            "image/jpeg"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "title": "The type schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": " ",
+          "examples": [
+            "image"
+          ]
+        },
+        "thumbFile": {
+          "type": "string",
+          "title": "The thumb file schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": " ",
+          "examples": [
+            "1e910d1f-9a92-42ef-a02f-0bcdd5414398"
+          ]
+        },
+        "folderID": {
+          "type": "string",
+          "title": "The folder ID schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": " ",
+          "examples": [
+            "88f38092-1bbe-4726-8ce1-14613b5b311b"
+          ]
+        },
+        "file": {
+          "type": "string",
+          "title": "The file schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": " ",
+          "examples": [
+            "1e910d1f-9a92-42ef-a02f-0bcdd5414398"
+          ]
+        },
+        "createdDate": {
+          "type": "integer",
+          "title": "The created date schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": 0,
+          "examples": [
+            1576243491266
+          ]
+        },
+        "name": {
+          "type": "string",
+          "title": "The name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": " ",
+          "examples": [
+            "1a50e277-1c0b-4268-82c7-6f956466b3ea"
+          ]
+        },
+        "subType": {
+          "type": "null",
+          "title": "The sub type schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": " ",
+          "examples": [
+          ]
+        },
+        "id": {
+          "type": "string",
+          "title": "The id schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": " ",
+          "examples": [
+            "b87a017e-498a-4802-b34e-952ea9962206"
+          ]
+        },
+        "thumbURL": {
+          "type": "string",
+          "title": "The thumb URL schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": " ",
+          "examples": [
+            "https://thumbs.amplience-qa.net/r/1e910d1f-9a92-42ef-a02f-0bcdd5414398"
+          ]
+        },
+        "publishStatus": {
+          "type": "string",
+          "title": "The publish status schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": " ",
+          "examples": [
+            "NOT_PUBLISHED"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "title": "The status schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": " ",
+          "examples": [
+            "active"
+          ]
+        },
+        "timestamp": {
+          "type": "integer",
+          "title": "The time stamp schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": 0,
+          "examples": [
+            1576254580364
+          ]
+        }
+      }
+    ]
+  }
+}
+
+
+
