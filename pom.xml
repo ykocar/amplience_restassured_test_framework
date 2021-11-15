@@ -104,7 +104,6 @@
 
                 </configuration>
             </plugin>
-
         </plugins>
 
     </build>

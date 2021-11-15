@@ -1,6 +1,5 @@
 package ApiTests;
 
-import utilities.ConfigurationReader;
 import io.github.cdimascio.dotenv.Dotenv;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -10,8 +9,8 @@ import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.Test;
 import utilities.ConfigurationReader;
+import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Tests {
@@ -74,7 +73,7 @@ public class Tests {
 
         assertEquals("129049fe-5a1f-4590-ad2a-97a61f83b0fc", response.jsonPath().get("content.data[" + lastData + "].name"));
 
-        ValidatableResponse vr = response.then().body(matchesJsonSchemaInClasspath("amplienceSchema.json"));
+        ValidatableResponse vr = response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("amplienceSchema.json"));
 
         assertEquals(true,vr);
     }
